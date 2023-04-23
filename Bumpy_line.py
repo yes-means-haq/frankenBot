@@ -6,18 +6,18 @@ robot = CamJamKitRobot()
 
 def slowRight():
     robot.value = (-0.5, 0)
-    time.sleep(0.2)
+    time.sleep(0.4)
 def slowLeft():
-    robot.value = (0.5, -0.5)
-    time.sleep(0.2)
+    robot.value = (0, -0.5)
+    time.sleep(0.4)
 
 def slowForward():
     robot.value = (-0.6, -0.6)
-    time.sleep(0.05)
+    time.sleep(0.025)
 
 def slowBackward():
     robot.value = (0.6, 0.6)
-    time.sleep(0.05)
+    time.sleep(0.025)
 
 def stop():
     robot.value = (0, 0)
@@ -37,4 +37,4 @@ def searchLine():
 for i in range(5):
     searchLine()
 
-
+stop()
