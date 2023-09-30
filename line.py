@@ -7,18 +7,19 @@ from gpiozero import LineSensor  # Import the GPIO Zero Library
 # Set variables for the GPIO pins
 pinLineFollower = 25
 
-sensor = LineSensor(pinLineFollower)
+sensor = LineSensor(pinLineFollower,threshold=0.2)
 
 
 # Define the functions that will be called when the line is
 # detected or not detected
 def lineseen():
     print("Line seen")
+    print(sensor.value)
 
 
 def linenotseen():
     print("No line seen")
-
+    print(sensor.value)
 
 # Tell the program what to do with a line is seen
 sensor.when_line = lineseen
@@ -29,6 +30,7 @@ try:
     # Repeat the next indented block forever
     while True:
         time.sleep(10)
+        print(sensor.value)
 
 # If you press CTRL+C, cleanup and stop
 except KeyboardInterrupt:
